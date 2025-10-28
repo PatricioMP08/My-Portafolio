@@ -11,8 +11,7 @@ const projects = [
   {
     id: "p1",
     title: "Sistema de pagos",
-    description:
-      "Aplicación web para gestión de pagos, creada con Laravel y Vue.",
+    description: "Aplicación web para gestión de pagos, creada con Laravel y Vue.",
     image: "/images/proyecto1.jpg",
     demo: "https://example.com/demo1",
     repo: "https://github.com/your/repo1",
@@ -21,8 +20,7 @@ const projects = [
   {
     id: "p2",
     title: "Portafolio interactivo",
-    description:
-      "Landing page moderna con animaciones 3D y diseño minimalista.",
+    description: "Landing page moderna con animaciones 3D y diseño minimalista.",
     image: "/images/proyecto2.jpg",
     demo: "https://example.com/demo2",
     repo: "https://github.com/your/repo2",
@@ -31,9 +29,8 @@ const projects = [
   {
     id: "p3",
     title: "Dashboard administrativo",
-    description:
-      "Panel de control con estadísticas y gestión de usuarios.",
-    image: "/images/proyecto3.jpg",
+    description: "Panel de control con estadísticas y gestión de usuarios.",
+    image: "",
     demo: "#",
     repo: "#",
     tech: ["React", "Node.js", "MongoDB"],
@@ -42,7 +39,7 @@ const projects = [
     id: "p4",
     title: "App de tareas",
     description: "Aplicación fullstack con autenticación JWT.",
-    image: "/images/proyecto4.jpg",
+    image: "",
     demo: "#",
     repo: "#",
     tech: ["React", "Express", "PostgreSQL"],
@@ -50,8 +47,7 @@ const projects = [
   {
     id: "p5",
     title: "Plataforma educativa",
-    description:
-      "Sistema para gestión de cursos, alumnos y evaluaciones online.",
+    description: "Sistema para gestión de cursos, alumnos y evaluaciones online.",
     image: "/images/proyecto5.jpg",
     demo: "#",
     repo: "#",
@@ -70,14 +66,17 @@ export default function ProjectsSection() {
   };
 
   return (
-    <section id="proyectos" className="relative py-28 px-6 md:px-12 scroll-mt-24">
+    <section
+      id="proyectos"
+      className="relative py-40 px-6 md:px-12 scroll-mt-24 w-full"
+    >
       {/* ✨ Encabezado */}
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7 }}
         viewport={{ once: false, amount: 0.2 }}
-        className="flex flex-col items-center mb-14"
+        className="flex flex-col items-center mb-20"
       >
         <div className="flex items-center justify-center gap-3 mb-6">
           <FaProjectDiagram className="text-cyan-400 w-8 h-8 drop-shadow-[0_0_10px_rgba(56,189,248,0.5)]" />
@@ -91,9 +90,12 @@ export default function ProjectsSection() {
         </p>
       </motion.div>
 
-      {/* 🌈 Grid de proyectos */}
+      {/* 🌈 Grid adaptable con 3 columnas automáticas */}
       <motion.div
-        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 justify-items-center"
+        className="grid gap-8 sm:gap-12 lg:gap-16 w-full max-w-[1500px] mx-auto"
+        style={{
+          gridTemplateColumns: "repeat(3, minmax(300px, 1fr))",
+        }}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: false, amount: 0.2 }}
@@ -117,38 +119,43 @@ export default function ProjectsSection() {
               glareEnable={true}
               glareMaxOpacity={0.12}
               scale={1.02}
-              className="w-full max-w-[360px]"
+              className="w-[340px] h-[420px]" // ← ancho mayor, altura menor
             >
               <div
                 onClick={() => openModal(p)}
-                className="group relative flex flex-col rounded-2xl overflow-hidden
+                className="group relative flex flex-col w-full h-full rounded-2xl overflow-hidden
                            bg-white/80 dark:bg-gray-900/60 border border-gray-200 dark:border-gray-800 
-                           shadow-xl cursor-pointer hover:shadow-2xl transition-all duration-300
-                           h-[500px]"
+                           shadow-xl cursor-pointer hover:shadow-2xl transition-all duration-300"
               >
                 {/* 🖼 Imagen */}
-                <div className="relative overflow-hidden h-[220px] flex-shrink-0">
-                  <Image
-                    src={p.image}
-                    alt={p.title}
-                    width={800}
-                    height={500}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  />
+                <div className="relative w-full h-[200px] bg-gray-800 flex items-center justify-center overflow-hidden flex-shrink-0">
+                  {p.image ? (
+                    <Image
+                      src={p.image}
+                      alt={p.title}
+                      width={800}
+                      height={500}
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    />
+                  ) : (
+                    <div className="flex flex-col items-center justify-center w-full h-full text-gray-400 text-sm select-none">
+                      <FaProjectDiagram className="text-3xl mb-2 opacity-50" />
+                      <span>Sin imagen</span>
+                    </div>
+                  )}
                 </div>
 
-                {/* 📝 Texto */}
-                <div className="flex flex-col flex-1 justify-between p-5">
+                {/* 📝 Contenido */}
+                <div className="flex flex-col justify-between flex-grow p-5 overflow-hidden">
                   <div>
                     <h3 className="text-xl font-semibold text-blue-600 mb-2 truncate">
                       {p.title}
                     </h3>
-                    <p className="text-gray-600 dark:text-gray-300 text-sm line-clamp-3 min-h-[60px]">
+                    <p className="text-gray-600 dark:text-gray-300 text-sm h-[60px] overflow-hidden text-ellipsis line-clamp-3">
                       {p.description}
                     </p>
                   </div>
 
-                  {/* Tags */}
                   <div className="flex gap-2 flex-wrap mt-4">
                     {p.tech.map((t) => (
                       <span
