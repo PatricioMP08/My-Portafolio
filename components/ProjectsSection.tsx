@@ -90,12 +90,9 @@ export default function ProjectsSection() {
         </p>
       </motion.div>
 
-      {/* 🌈 Grid adaptable con 3 columnas automáticas */}
+      {/* 🌈 Grid con 3 columnas en escritorio */}
       <motion.div
-        className="grid gap-8 sm:gap-12 lg:gap-16 w-full max-w-[1500px] mx-auto"
-        style={{
-          gridTemplateColumns: "repeat(3, minmax(300px, 1fr))",
-        }}
+        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10 lg:gap-12 w-full max-w-[1500px] mx-auto"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: false, amount: 0.2 }}
@@ -119,7 +116,7 @@ export default function ProjectsSection() {
               glareEnable={true}
               glareMaxOpacity={0.12}
               scale={1.02}
-              className="w-[340px] h-[420px]" // ← ancho mayor, altura menor
+              className="w-full h-[400px] max-w-[480] mx-auto" // ← responsivo
             >
               <div
                 onClick={() => openModal(p)}
