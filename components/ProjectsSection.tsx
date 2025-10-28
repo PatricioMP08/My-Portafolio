@@ -7,7 +7,6 @@ import Image from "next/image";
 import ProjectModal from "./ProjectModal";
 import { FaProjectDiagram } from "react-icons/fa";
 
-// Datos
 const projects = [
   {
     id: "p1",
@@ -32,11 +31,31 @@ const projects = [
   {
     id: "p3",
     title: "Dashboard administrativo",
-    description: "Panel de control con estadísticas y gestión de usuarios.",
+    description:
+      "Panel de control con estadísticas y gestión de usuarios.",
     image: "/images/proyecto3.jpg",
     demo: "#",
     repo: "#",
     tech: ["React", "Node.js", "MongoDB"],
+  },
+  {
+    id: "p4",
+    title: "App de tareas",
+    description: "Aplicación fullstack con autenticación JWT.",
+    image: "/images/proyecto4.jpg",
+    demo: "#",
+    repo: "#",
+    tech: ["React", "Express", "PostgreSQL"],
+  },
+  {
+    id: "p5",
+    title: "Plataforma educativa",
+    description:
+      "Sistema para gestión de cursos, alumnos y evaluaciones online.",
+    image: "/images/proyecto5.jpg",
+    demo: "#",
+    repo: "#",
+    tech: ["Laravel", "Vue", "MySQL"],
   },
 ];
 
@@ -72,7 +91,7 @@ export default function ProjectsSection() {
         </p>
       </motion.div>
 
-      {/* 🌈 Grid de proyectos animado en cascada */}
+      {/* 🌈 Grid de proyectos */}
       <motion.div
         className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 justify-items-center"
         initial="hidden"
@@ -80,9 +99,7 @@ export default function ProjectsSection() {
         viewport={{ once: false, amount: 0.2 }}
         variants={{
           hidden: {},
-          visible: {
-            transition: { staggerChildren: 0.2 },
-          },
+          visible: { transition: { staggerChildren: 0.15 } },
         }}
       >
         {projects.map((p) => (
@@ -103,13 +120,14 @@ export default function ProjectsSection() {
               className="w-full max-w-[360px]"
             >
               <div
-                className="group relative rounded-2xl overflow-hidden bg-white/80 
-                           dark:bg-gray-900/60 border border-gray-200 dark:border-gray-800 
-                           shadow-xl cursor-pointer hover:shadow-2xl transition-all duration-300"
                 onClick={() => openModal(p)}
+                className="group relative flex flex-col rounded-2xl overflow-hidden
+                           bg-white/80 dark:bg-gray-900/60 border border-gray-200 dark:border-gray-800 
+                           shadow-xl cursor-pointer hover:shadow-2xl transition-all duration-300
+                           h-[500px]"
               >
                 {/* 🖼 Imagen */}
-                <div className="relative overflow-hidden rounded-2xl h-[200px]">
+                <div className="relative overflow-hidden h-[220px] flex-shrink-0">
                   <Image
                     src={p.image}
                     alt={p.title}
@@ -117,48 +135,21 @@ export default function ProjectsSection() {
                     height={500}
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
-
-                  {/* Overlay hover */}
-                  <div className="absolute inset-0 z-10 rounded-2xl bg-black/40 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                    <motion.div
-                      initial={{ scale: 0.9, opacity: 0 }}
-                      whileInView={{ scale: 1, opacity: 1 }}
-                      transition={{ duration: 0.3 }}
-                      className="flex gap-3"
-                    >
-                      <a
-                        href={p.demo}
-                        target="_blank"
-                        rel="noreferrer"
-                        onClick={(e) => e.stopPropagation()}
-                        className="px-4 py-2 bg-white/90 text-gray-800 rounded-full font-semibold shadow 
-                                   transition-all duration-300 hover:scale-105 hover:shadow-[0_0_15px_rgba(255,255,255,0.7)]"
-                      >
-                        Live Demo
-                      </a>
-                      <a
-                        href={p.repo}
-                        target="_blank"
-                        rel="noreferrer"
-                        onClick={(e) => e.stopPropagation()}
-                        className="px-4 py-2 border border-white/70 text-white rounded-full font-semibold 
-                                   transition-all duration-300 hover:bg-white/20 hover:border-white hover:scale-105 hover:shadow-[0_0_15px_rgba(255,255,255,0.5)]"
-                      >
-                        GitHub
-                      </a>
-                    </motion.div>
-                  </div>
                 </div>
 
                 {/* 📝 Texto */}
-                <div className="p-5">
-                  <h3 className="text-xl font-semibold text-blue-600 mb-2">
-                    {p.title}
-                  </h3>
-                  <p className="text-gray-600 dark:text-gray-300 mb-3 text-sm line-clamp-2">
-                    {p.description}
-                  </p>
-                  <div className="flex gap-2 flex-wrap">
+                <div className="flex flex-col flex-1 justify-between p-5">
+                  <div>
+                    <h3 className="text-xl font-semibold text-blue-600 mb-2 truncate">
+                      {p.title}
+                    </h3>
+                    <p className="text-gray-600 dark:text-gray-300 text-sm line-clamp-3 min-h-[60px]">
+                      {p.description}
+                    </p>
+                  </div>
+
+                  {/* Tags */}
+                  <div className="flex gap-2 flex-wrap mt-4">
                     {p.tech.map((t) => (
                       <span
                         key={t}
@@ -169,13 +160,39 @@ export default function ProjectsSection() {
                     ))}
                   </div>
                 </div>
+
+                {/* 🪄 Overlay hover */}
+                <div className="absolute inset-0 bg-black/40 backdrop-blur-sm flex items-center justify-center 
+                                opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                  <div className="flex gap-3">
+                    <a
+                      href={p.demo}
+                      target="_blank"
+                      rel="noreferrer"
+                      onClick={(e) => e.stopPropagation()}
+                      className="px-4 py-2 bg-white/90 text-gray-800 rounded-full font-semibold shadow 
+                                 transition-all duration-300 hover:scale-105 hover:shadow-[0_0_15px_rgba(255,255,255,0.7)]"
+                    >
+                      Live Demo
+                    </a>
+                    <a
+                      href={p.repo}
+                      target="_blank"
+                      rel="noreferrer"
+                      onClick={(e) => e.stopPropagation()}
+                      className="px-4 py-2 border border-white/70 text-white rounded-full font-semibold 
+                                 transition-all duration-300 hover:bg-white/20 hover:border-white hover:scale-105 hover:shadow-[0_0_15px_rgba(255,255,255,0.5)]"
+                    >
+                      GitHub
+                    </a>
+                  </div>
+                </div>
               </div>
             </Tilt>
           </motion.div>
         ))}
       </motion.div>
 
-      {/* 🪟 Modal */}
       <ProjectModal
         project={openProject}
         open={modalOpen}
