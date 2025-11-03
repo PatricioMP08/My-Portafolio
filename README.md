@@ -19,33 +19,7 @@ Diseñado para mostrar mi experiencia, habilidades, proyectos y logros con una p
 
 ## 🧱 Estructura del Proyecto
 
-src/
-├── app/
-│ ├── layout.tsx
-│ ├── page.tsx
-│ └── globals.css
-│
-├── components/
-│ ├── AboutSection.tsx # Sección "Sobre mí"
-│ ├── AchievementsSection.tsx # Carrusel de logros y certificaciones
-│ ├── AnimatedBackground.tsx # Fondo animado con movimiento sutil
-│ ├── BubbleNav.tsx # Navegación inferior tipo burbuja
-│ ├── ClientLayout.tsx # Layout del cliente (envoltorio de la app)
-│ ├── ContactSection.tsx # Sección de contacto
-│ ├── ExperienceSection.tsx # Experiencia laboral o académica
-│ ├── Footer.tsx # Pie de página con créditos
-│ ├── HeroSection.tsx # Presentación principal (inicio)
-│ ├── Navbar.tsx # Barra de navegación superior
-│ ├── ProjectModal.tsx # Modal con información ampliada del proyecto
-│ ├── ProjectsSection.tsx # Tarjetas de proyectos con efecto 3D
-│ ├── SocialSidebar.jsx # Barra lateral con redes y botón “ir arriba”
-│ ├── TechSection.tsx # Tecnologías principales
-│ ├── TechSkillsSection.tsx # Habilidades técnicas
-│ └── ThemeProviderClient.tsx # Control de tema (oscuro/claro)
-│
-└── public/
-└── images/ # Imágenes de proyectos, logros, etc.
----
+<pre> ```bash src/ ├── app/ │ ├── layout.tsx │ ├── page.tsx │ └── globals.css │ ├── components/ │ ├── AboutSection.tsx # Sección "Sobre mí" │ ├── AchievementsSection.tsx # Carrusel de logros y certificaciones │ ├── AnimatedBackground.tsx # Fondo animado con movimiento sutil │ ├── BubbleNav.tsx # Navegación inferior tipo burbuja │ ├── ClientLayout.tsx # Layout del cliente (envoltorio de la app) │ ├── ContactSection.tsx # Sección de contacto │ ├── ExperienceSection.tsx # Experiencia laboral o académica │ ├── Footer.tsx # Pie de página con créditos │ ├── HeroSection.tsx # Presentación principal (inicio) │ ├── Navbar.tsx # Barra de navegación superior │ ├── ProjectModal.tsx # Modal con información ampliada del proyecto │ ├── ProjectsSection.tsx # Tarjetas de proyectos con efecto 3D │ ├── SocialSidebar.jsx # Barra lateral con redes y botón “ir arriba” │ ├── TechSection.tsx # Tecnologías principales │ ├── TechSkillsSection.tsx # Habilidades técnicas │ └── ThemeProviderClient.tsx # Control de tema (oscuro/claro) │ └── public/ └── images/ # Imágenes de proyectos, logros, etc. ``` </pre>
 
 ## ⚙️ Instalación y Ejecución
 
