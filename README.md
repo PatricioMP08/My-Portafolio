@@ -1,36 +1,156 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 💼 Portafolio Profesional 
 
-## Getting Started
+Portafolio moderno, animado y totalmente responsivo desarrollado con **Next.js 14**, **React**, **Tailwind CSS** y **Framer Motion**.  
+Diseñado para mostrar mi experiencia, habilidades, proyectos y logros con una presentación atractiva, profesional y fluida.
 
-First, run the development server:
+---
 
-```bash
+## 🚀 Tecnologías Principales
+
+- ⚛️ **Next.js 14 (App Router)**
+- 💅 **Tailwind CSS**
+- 🌀 **Framer Motion**
+- 💫 **React Parallax Tilt**
+- 🧠 **TypeScript**
+- 🎯 **React Icons**
+- 🌙 **Theme Provider Client (Modo oscuro/claro)**
+
+---
+
+## 🧱 Estructura del Proyecto
+
+src/
+├── app/
+│ ├── layout.tsx
+│ ├── page.tsx
+│ └── globals.css
+│
+├── components/
+│ ├── AboutSection.tsx # Sección "Sobre mí"
+│ ├── AchievementsSection.tsx # Carrusel de logros y certificaciones
+│ ├── AnimatedBackground.tsx # Fondo animado con movimiento sutil
+│ ├── BubbleNav.tsx # Navegación inferior tipo burbuja
+│ ├── ClientLayout.tsx # Layout del cliente (envoltorio de la app)
+│ ├── ContactSection.tsx # Sección de contacto
+│ ├── ExperienceSection.tsx # Experiencia laboral o académica
+│ ├── Footer.tsx # Pie de página con créditos
+│ ├── HeroSection.tsx # Presentación principal (inicio)
+│ ├── Navbar.tsx # Barra de navegación superior
+│ ├── ProjectModal.tsx # Modal con información ampliada del proyecto
+│ ├── ProjectsSection.tsx # Tarjetas de proyectos con efecto 3D
+│ ├── SocialSidebar.jsx # Barra lateral con redes y botón “ir arriba”
+│ ├── TechSection.tsx # Tecnologías principales
+│ ├── TechSkillsSection.tsx # Habilidades técnicas
+│ └── ThemeProviderClient.tsx # Control de tema (oscuro/claro)
+│
+└── public/
+└── images/ # Imágenes de proyectos, logros, etc.
+---
+
+## ⚙️ Instalación y Ejecución
+
+### 1️⃣ Clonar el repositorio
+Abre tu terminal y ejecuta:
+git clone https://github.com/patriciomardones/portafolio.git
+cd portafolio
+
+2️⃣ Instalar dependencias
+Con npm:
+npm install
+
+3️⃣ Ejecutar en modo desarrollo
+
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Esto iniciará el servidor de desarrollo en:
+👉 http://localhost:3000
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+4️⃣ Compilar para producción
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+npm run build
+npm start
+Esto genera los archivos optimizados en la carpeta .next/
+y ejecuta la versión de producción del portafolio.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+✨ Características Principales
+🏠 Hero Section
+Presenta tu nombre, profesión y una animación de bienvenida.
 
-## Learn More
+👨‍💻 About Section
+Información sobre ti, tu enfoque profesional y tus objetivos.
 
-To learn more about Next.js, take a look at the following resources:
+🏆 Achievements Section
+Carrusel automático con tus logros, premios o certificaciones.
+Pausa automática al pasar el mouse y animaciones con Framer Motion.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+💼 Projects Section
+Galería interactiva con tarjetas 3D (efecto Tilt) para mostrar tus proyectos.
+Cada tarjeta puede incluir:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Imagen
 
-## Deploy on Vercel
+Descripción
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Enlace a demo
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Enlace a repositorio GitHub
+
+⚙️ Experience & Tech Skills
+Muestra tu experiencia y tecnologías dominadas, con animaciones de entrada y hover.
+
+📬 Contact Section
+Formulario y enlaces directos para contactarte fácilmente.
+
+🧭 Navegación fluida
+La barra de navegación detecta la sección activa y el desplazamiento es suave y preciso.
+
+🌙 Modo oscuro / claro
+Automático según preferencia del usuario, configurable manualmente.
+
+🔝 Social Sidebar
+Botones fijos de redes sociales y “volver arriba” con efecto de aparición suave.
+
+🧩 Personalización
+🎨 Editar tus proyectos
+Archivo:
+src/components/ProjectsSection.tsx
+
+tsx
+Copiar código
+{
+  id: "p1",
+  title: "Gestor de Pagos",
+  description: "Aplicación web para la gestión de pagos y reportes.",
+  image: "/images/pagos.jpg",
+  demo: "https://example.com/demo",
+  repo: "https://github.com/usuario/proyecto",
+  tech: ["Next.js", "Laravel", "MySQL"]
+}
+Agrega, elimina o modifica los proyectos según tus necesidades.
+
+🏅 Agregar logros o certificados
+Archivo:
+src/components/AchievementsSection.tsx
+
+Agrega elementos con su icono, título, descripción y enlace.
+
+👤 Modificar datos personales
+Archivo:
+src/components/AboutSection.tsx
+
+Edita tu biografía, especialización, intereses y habilidades blandas.
+
+🌐 Editar redes sociales
+Archivo:
+src/components/SocialSidebar.jsx
+
+Reemplaza tus enlaces de:
+
+GitHub
+
+LinkedIn
+
+Correo electrónico
+
+🦶 Editar el Footer
+Archivo:
+src/components/Footer.tsx
