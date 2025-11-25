@@ -18,8 +18,8 @@ export default function AboutSection() {
         className="relative w-48 h-48 md:w-56 md:h-56 rounded-full overflow-hidden shadow-lg ring-2 ring-cyan-400/30 hover:ring-cyan-400/60 transition-all duration-500"
       >
         <Image
-          src="/images/profile.jpg" 
-          alt="Nombre Apellido"
+          src="/images/profile.jpg"
+          alt="Patricio Mardones"
           width={300}
           height={300}
           className="object-cover"
@@ -38,14 +38,14 @@ export default function AboutSection() {
         </h2>
 
         <p className="text-gray-300 mb-4 leading-relaxed">
-          Soy <span className="text-cyan-400 font-medium">Nombre Apellido</span>, 
-          un desarrollador <strong>Full Stack</strong> enfocado en construir soluciones web limpias, 
+          Soy <span className="text-cyan-400 font-medium">Patricio Mardones</span>,
+          un desarrollador <strong>Full Stack</strong> enfocado en construir soluciones web limpias,
           seguras y optimizadas para la experiencia del usuario.
         </p>
 
         <p className="text-gray-400 leading-relaxed">
-          Me apasiona el desarrollo con <strong>Laravel, Next.js y React</strong>, 
-          combinando la eficiencia del backend con la fluidez de las interfaces modernas.  
+          Me apasiona el desarrollo con <strong>Laravel, Next.js y React</strong>,
+          combinando la eficiencia del backend con la fluidez de las interfaces modernas.
           Disfruto crear proyectos funcionales que ayuden a empresas y personas a digitalizar sus ideas.
         </p>
 

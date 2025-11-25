@@ -57,7 +57,7 @@ export default function HeroSection() {
           transition={{ duration: 0.8 }}
           className="tracking-[0.35em] text-sm text-gray-300"
         >
-          NOMBRE APELLIDO
+          PATRICIO MARDONES
         </motion.p>
 
         {/* Título + Typewriter */}
@@ -71,7 +71,7 @@ export default function HeroSection() {
           <span className="relative inline-block">
             <motion.span
               initial={{ rotate: -5 }}
-              animate={{ rotate: [ -5, 5, -5 ] }}
+              animate={{ rotate: [-5, 5, -5] }}
               transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
               className="bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500 text-transparent bg-clip-text"
             >
